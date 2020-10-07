@@ -18,7 +18,7 @@ import ast
 import http.cookiejar as cookielib
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.action_chains import ActionChain
 from selenium.webdriver.common.keys import Keys
 import config
 
@@ -257,6 +257,7 @@ class Application(Application_ui):
             chrome_options.add_argument('--disable-popup-blocking')
             chrome_options.add_argument('-–single-process')
             chrome_options.add_argument('--ignore-ssl-errors')
+            # chrome_options.binary_location = '/opt/google/chrome/chrome'
             self.driver = webdriver.Chrome(
                 chrome_options=chrome_options, executable_path=self.driverFile)
             self.driver.set_page_load_timeout(8000)
